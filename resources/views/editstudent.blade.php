@@ -53,28 +53,29 @@
             <div class="form-group">
                 <label>Hobbies</label><br>
                 @php
-                    $storedHobbies = explode(',', $student->studenthobbies);
+                $storedHobbies = explode(',', $student->studenthobbies);
                 @endphp
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="studenthobbies[]" id="hobby_reading" value="Reading" {{ (in_array('Reading', $storedHobbies)) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" name="studenthobbies[]" id="hobby_reading" value="Reading" {{ (in_array('Reading', old('studenthobbies[]', $storedHobbies))) ? 'checked' : '' }}>
                     <label class="form-check-label" for="hobby_reading">Reading</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="studenthobbies[]" id="hobby_traveling" value="Traveling" {{ (in_array('Traveling', $storedHobbies)) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" name="studenthobbies[]" id="hobby_traveling" value="Traveling" {{ (in_array('Traveling', old('studenthobbies', $storedHobbies))) ? 'checked' : '' }}>
                     <label class="form-check-label" for="hobby_traveling">Traveling</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="studenthobbies[]" id="hobby_sports" value="Sports" {{ (in_array('Sports', $storedHobbies)) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" name="studenthobbies[]" id="hobby_sports" value="Sports" {{ (in_array('Sports', old('studenthobbies', $storedHobbies))) ? 'checked' : '' }}>
                     <label class="form-check-label" for="hobby_sports">Sports</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="studenthobbies[]" id="hobby_music" value="Music" {{ (in_array('Music', $storedHobbies)) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" name="studenthobbies[]" id="hobby_music" value="Music" {{ (in_array('Music', old('studenthobbies', $storedHobbies))) ? 'checked' : '' }}>
                     <label class="form-check-label" for="hobby_music">Music</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="studenthobbies[]" id="hobby_gaming" value="Gaming" {{ (in_array('Gaming', $storedHobbies)) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" name="studenthobbies[]" id="hobby_gaming" value="Gaming" {{ (in_array('Gaming', old('studenthobbies', $storedHobbies))) ? 'checked' : '' }}>
                     <label class="form-check-label" for="hobby_gaming">Gaming</label>
                 </div>
+
                 <div id="hobbies-error" class="invalid-feedback" style="display: none;">Please select at least one hobby.</div>
             </div>
             <div class="form-group">

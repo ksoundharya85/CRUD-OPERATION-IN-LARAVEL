@@ -96,7 +96,7 @@ class studentformController extends Controller
             'studenthobbies.array' => 'Invalid hobbies data.',
             'studentfeedback.string' => 'Invalid feedback data.',
         ]);
-        $studenthobbies = implode(', ', $request->input('studenthobbies', []));
+        $studenthobbies = implode(',', $request->input('studenthobbies', []));
         $student = studentdata::findOrFail($studentid);
 
 
